@@ -16,7 +16,12 @@ const userSchema= new mongoose.Schema({
         required: true,
         unique: true,
     },
-},{
+    avatar:{
+        type: String,
+        default: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
+    },
+},
+{
     timestamps: true,
 });
 
