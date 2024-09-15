@@ -282,11 +282,12 @@ export default function CreateListing() {
                 <span className="text-xs">($ / month)</span>
               </div>
             </div>
+            {formData.offer && (
             <div className="flex items-center gap-2">
               <input
                 type="number"
                 id="discountPrice"
-                min={1}
+                min={0}
                 max={1000000}
                 required
                 className="p-3 border border-gray-300 rounded-lg"
@@ -298,6 +299,7 @@ export default function CreateListing() {
                 <span className="text-xs">($ / month)</span>
               </div>
             </div>
+          )}
           </div>
         </div>
         <div className="flex flex-col flex-1 gap-4">
@@ -348,7 +350,7 @@ export default function CreateListing() {
                 </button>
               </div>
             ))}
-          <button className="p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80">
+          <button  disabled={loading || uploading} className="p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80">
             {loading ? "Loading..." : "Create Listing"} 
           </button>
           <p className="text-red-700 text-sm">{error && error}</p>
