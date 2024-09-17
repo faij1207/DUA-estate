@@ -1,0 +1,67 @@
+// Login
+POST http://localhost:3000/api/auth/signin
+Content-Type: application/json
+
+{
+	"email":"crazy7@gmail.com",
+	"password":"crazy7"
+}
+### 
+//resigter
+POST http://localhost:3000/api/auth/signup
+Content-Type: application/json
+
+
+{
+	"username":"crazy7",
+	"email":"crazy7@gmail.com",
+	"password":"crazy7"
+}
+	
+
+###
+// Profile Route
+GET http://localhost:3000/api/profile
+
+###
+// Logout
+GET http://localhost:3000/api/auth/logout
+
+
+###
+// update profile
+POST http://localhost:3000/api/user/update/66d719bf1a06d1b57ee54245
+Content-Type: application/json
+
+{
+	"email":"crazy420@gmail.com"
+}
+
+###
+// delete user
+DELETE http://localhost:3000/api/user/delete/66d719bf1a06d1b57ee54245
+
+### 
+//create listing
+POST http://localhost:3000/api/listing/create
+Content-Type: application/json
+
+{
+    "name": "Test Listing 12",
+    "description": "This is a test listing 2",
+    "address": "123 Test Street new",
+    "regularPrice": 1000,
+    "discountPrice": 800,
+    "bathrooms": 2,
+    "bedrooms": 3,
+    "furnished": true,
+    "parking": true,
+    "type": "Apartment",
+    "offer": true,
+    "imageUrls": ["https://example.com/image1.jpg", "https://example.com/image2.jpg"],
+    "userRef": "66e6a788ef29d7ce3613ea96"
+}
+
+###
+//delete listings
+DELETE  http://localhost:3000/api/user/listing/66e8f53ee40a4bc1d298c32d
