@@ -63,5 +63,14 @@ Content-Type: application/json
 }
 
 ###
+//get listings
+GET  http://localhost:3000/api/user/listings/66e6cbb1ce6789ff6c68c220
+
+
+###
 //delete listings
 DELETE  http://localhost:3000/api/user/listing/66e8f53ee40a4bc1d298c32d
+
+###
+//update listings
+POST  http://localhost:3000/api/listing//update/66e90836ab95e826b89c3797
