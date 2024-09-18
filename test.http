@@ -3,8 +3,8 @@ POST http://localhost:3000/api/auth/signin
 Content-Type: application/json
 
 {
-	"email":"crazy7@gmail.com",
-	"password":"crazy7"
+	"email":"crazy420@gmail.com",
+	"password":"crazy420"
 }
 ### 
 //resigter
@@ -63,14 +63,14 @@ Content-Type: application/json
 }
 
 ###
-//get user listings
-GET  http://localhost:3000/api/user/listings/66e90b19b02db0aaef9df474
+//get logged in user listings
+GET  http://localhost:3000/api/user/listings/66e3248b9d85f96442d93c14
 
-
+GET http://localhost:3000/api/user/66e90b19b02db0aaef9df474
 ###
 //delete listings
 DELETE  http://localhost:3000/api/user/listing/66e90b19b02db0aaef9df474
 
 ###
-//update listings
-POST  http://localhost:3000/api/listing//update/66e90836ab95e826b89c3797
+//Get one listing
+GET http://localhost:3000/api/listing/get/66e93e416e5e840db1e6df73
