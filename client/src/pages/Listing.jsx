@@ -31,7 +31,7 @@ export default function Listing() {
         setLoading(true);
         const res = await fetch(`/api/listing/get/${params.listingID}`);
         const data = await res.json();
-        
+
         if (data.success === false) {
           setError(true);
           setLoading(false);
@@ -47,6 +47,10 @@ export default function Listing() {
     };
     fetchListing();
   }, [params.listingId]);
+
+  console.log(listing?.userRef);
+  console.log(currentUser?.currentUser?._id); // Correct way
+  console.log(listing?.userRef === currentUser?.currentUser?._id); // Correct way
 
   return (
     <main>
@@ -135,16 +139,17 @@ export default function Listing() {
               </li>
             </ul>
             {currentUser &&
-              listing.userId !== currentUser.id &&
-              !contact(
+              listing?.userRef !== currentUser.currentUser._id &&
+              !contact && ( 
                 <button
                   onClick={() => setContact(true)}
-                  className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 p-3"
+                  className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95"
                 >
-                  Contact landlord 
+                  Contact landlord
                 </button>
               )}
-            {contact && <Contact listing={listing}/>}
+
+            {contact && <Contact listing={listing} />}
           </div>
         </div>
       )}
