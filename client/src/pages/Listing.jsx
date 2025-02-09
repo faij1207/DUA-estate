@@ -48,10 +48,6 @@ export default function Listing() {
     fetchListing();
   }, [params.listingId]);
 
-  console.log(listing?.userRef);
-  console.log(currentUser?.currentUser?._id); // Correct way
-  console.log(listing?.userRef === currentUser?.currentUser?._id); // Correct way
-
   return (
     <main>
       {loading && <p className="text-center my-7 text-2xl">Loading...</p>}
